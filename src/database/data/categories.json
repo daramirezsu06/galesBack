@@ -20,5 +20,17 @@
     "name": "Home",
     "description": "Los productos relacionados a esta categoría se listarán en la sección home",
     "show": false
+  },
+  {
+    "name": "Materias Primas",
+    "description": "Componentes esenciales para la elaboración de embutidos y otros productos artesanales",
+    "image": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/cat_materias_primas.jpg",
+    "show": true
+  },
+  {
+    "name": "Embalajes",
+    "description": "Soluciones de empaque para conservar y presentar productos de manera óptima",
+    "image": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/cat_embalajes.jpg",
+    "show": true
   }
 ]

@@ -10,5 +10,13 @@
   {
     "name": "Clean",
     "image": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719623505/Henry/delicias-gales/products/clean-brand_b8r1vn.png"
+  },
+  {
+    "name": "Ingredientes",
+    "image": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/ingredientes-brand.jpg"
+  },
+  {
+    "name": "Envases",
+    "image": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/envases-brand.jpg"
   }
 ]

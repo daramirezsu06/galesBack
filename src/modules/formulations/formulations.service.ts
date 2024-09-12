@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FormulationItem } from 'src/entities/formulationItems';
 import { Formulation } from 'src/entities/formulations.entity';
@@ -17,7 +21,9 @@ export class FormulationsService {
   ) {}
 
   async findAll() {
-    return await this.formulationRepo.find({ relations: ['formulationItems'] });
+    return await this.formulationRepo.find({
+      relations: ['formulationItems', 'formulationItems.product'],
+    });
   }
 
   async findById(id: string) {
@@ -52,6 +58,7 @@ export class FormulationsService {
         product,
         name: data.name,
         description: data.description,
+        presentation: data.presentation,
       });
 
       // Guardar la formulación primero para obtener su ID

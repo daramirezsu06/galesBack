@@ -14,6 +14,7 @@ import {
 import { UUID } from 'crypto';
 //import { ProductImages } from 'src/entities/productImages';
 import { ProductStatus } from 'src/models/productStatus.enum';
+import { ProductType } from 'src/models/productType.enum';
 
 export class CreateProductDto {
   /**
@@ -110,6 +111,14 @@ export class CreateProductDto {
   @IsOptional()
   @IsNumber()
   readonly maxQuantity: number;
+
+  /**
+   * debe ser un tipo de producto valido segun el productType.enum 'MP', 'EM','PT','CO
+   * @example 'PT'
+   */
+  @IsOptional()
+  @IsString()
+  readonly productType?: ProductType;
 
   /**
    * La imagen debe ser una url y es opcional

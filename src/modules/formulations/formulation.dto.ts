@@ -51,6 +51,11 @@ export class CreateFormulationDto {
   productId: string;
 
   @ApiProperty()
+  @IsNumber()
+  @IsNotEmpty()
+  presentation: number;
+
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
   name: string;
@@ -77,6 +82,11 @@ export class UpdateFormulationDto {
   @IsString()
   @IsOptional()
   name?: string;
+
+  @ApiProperty()
+  @IsNumber()
+  @IsOptional()
+  presentation?: number;
 
   @ApiPropertyOptional()
   @IsString()
