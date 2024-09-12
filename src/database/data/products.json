@@ -13,10 +13,8 @@
     "status": "active",
     "description": "5 unidades. Peso aprox 400 gr",
     "brand": "Gales",
-    "categories": [
-      "Chorizos secos",
-      "Destacados"
-    ]
+    "categories": ["Chorizos secos", "Destacados"],
+    "productType": "PT"
   },
   {
     "name": "Salchichón Ibérico",
@@ -32,10 +30,8 @@
     "status": "active",
     "description": "4 unidades. Peso aprox 350 gr",
     "brand": "Gales",
-    "categories": [
-      "Chorizos secos",
-      "Destacados"
-    ]
+    "categories": ["Chorizos secos", "Destacados"],
+    "productType": "PT"
   },
   {
     "name": "Jamón Serrano",
@@ -51,10 +47,8 @@
     "status": "active",
     "description": "Pieza completa. Peso aprox 7 kg",
     "brand": "Gales",
-    "categories": [
-      "Chorizos secos",
-      "Destacados"
-    ]
+    "categories": ["Chorizos secos", "Destacados"],
+    "productType": "PT"
   },
   {
     "name": "Lomo Embuchado",
@@ -70,9 +64,8 @@
     "status": "active",
     "description": "2 unidades. Peso aprox 500 gr",
     "brand": "Gales",
-    "categories": [
-      "Chorizos secos"
-    ]
+    "categories": ["Chorizos secos"],
+    "productType": "PT"
   },
   {
     "name": "Chistorra",
@@ -88,9 +81,8 @@
     "status": "active",
     "description": "6 unidades. Peso aprox 300 gr",
     "brand": "Gales",
-    "categories": [
-      "Chorizos secos"
-    ]
+    "categories": ["Chorizos secos"],
+    "productType": "PT"
   },
   {
     "name": "Jabon en Gel 800 gramos",
@@ -106,9 +98,8 @@
     "status": "active",
     "description": "Jabon en Gel. Presenación 800 gramos",
     "brand": "Clean",
-    "categories": [
-      "Jabones"
-    ]
+    "categories": ["Jabones"],
+    "productType": "CO"
   },
   {
     "name": "Jabon en Gel 400 gramos",
@@ -124,9 +115,8 @@
     "status": "active",
     "description": "Jabon en Gel. Presenación 400 gramos",
     "brand": "Clean",
-    "categories": [
-      "Jabones"
-    ]
+    "categories": ["Jabones"],
+    "productType": "CO"
   },
   {
     "name": "Jabon líquido 1 litro",
@@ -142,9 +132,8 @@
     "status": "active",
     "description": "Jabon líquido. Presenación 1 litro",
     "brand": "Clean",
-    "categories": [
-      "Jabones"
-    ]
+    "categories": ["Jabones"],
+    "productType": "CO"
   },
   {
     "name": "Jabon líquido 500 cm3",
@@ -160,9 +149,143 @@
     "status": "active",
     "description": "Jabon líquido. Presenación 500 cm3",
     "brand": "Clean",
-    "categories": [
-      "Jabones",
-      "Destacados"
-    ]
+    "categories": ["Jabones", "Destacados"],
+    "productType": "CO"
+  },
+  {
+    "name": "Carne de cerdo",
+    "slug": "carne-de-cerdo",
+    "cod": "MP001",
+    "originalPrice": 50,
+    "wholesalePrice": 45,
+    "retailPrice": 50,
+    "stock": 1000,
+    "minQuantity": 100,
+    "maxQuantity": 1000,
+    "thumbnail": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/carne-de-cerdo.jpg",
+    "status": "active",
+    "description": "Carne fresca para chorizo. Peso aprox 1 kg",
+    "brand": "Ingredientes",
+    "categories": ["Materias Primas"],
+    "productType": "MP"
+  },
+  {
+    "name": "Sal para curado",
+    "slug": "sal-para-curado",
+    "cod": "MP002",
+    "originalPrice": 20,
+    "wholesalePrice": 18,
+    "retailPrice": 20,
+    "stock": 500,
+    "minQuantity": 50,
+    "maxQuantity": 500,
+    "thumbnail": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/sal-para-curado.jpg",
+    "status": "active",
+    "description": "Sal especializada para curar embutidos",
+    "brand": "Ingredientes",
+    "categories": ["Materias Primas"],
+    "productType": "MP"
+  },
+  {
+    "name": "Proteína de soya",
+    "slug": "proteina-de-soya",
+    "cod": "MP003",
+    "originalPrice": 35,
+    "wholesalePrice": 30,
+    "retailPrice": 35,
+    "stock": 600,
+    "minQuantity": 50,
+    "maxQuantity": 700,
+    "thumbnail": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/proteina-de-soya.jpg",
+    "status": "active",
+    "description": "Proteína de soya para embutidos. Peso aprox 500 gr",
+    "brand": "Ingredientes",
+    "categories": ["Materias Primas"],
+    "productType": "MP"
+  },
+  {
+    "name": "Condimento humo",
+    "slug": "condimento-humo",
+    "cod": "MP004",
+    "originalPrice": 25,
+    "wholesalePrice": 22,
+    "retailPrice": 25,
+    "stock": 400,
+    "minQuantity": 50,
+    "maxQuantity": 500,
+    "thumbnail": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/condimento-humo.jpg",
+    "status": "active",
+    "description": "Condimento sabor humo para chorizo",
+    "brand": "Ingredientes",
+    "categories": ["Materias Primas"],
+    "productType": "MP"
+  },
+  {
+    "name": "Tripa natural",
+    "slug": "tripa-natural",
+    "cod": "MP005",
+    "originalPrice": 40,
+    "wholesalePrice": 35,
+    "retailPrice": 40,
+    "stock": 300,
+    "minQuantity": 20,
+    "maxQuantity": 400,
+    "thumbnail": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/tripa-natural.jpg",
+    "status": "active",
+    "description": "Tripa natural de cerdo para embutidos",
+    "brand": "Ingredientes",
+    "categories": ["Materias Primas"],
+    "productType": "MP"
+  },
+  {
+    "name": "Pimentón dulce",
+    "slug": "pimenton-dulce",
+    "cod": "MP006",
+    "originalPrice": 15,
+    "wholesalePrice": 12,
+    "retailPrice": 15,
+    "stock": 500,
+    "minQuantity": 50,
+    "maxQuantity": 600,
+    "thumbnail": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/pimenton-dulce.jpg",
+    "status": "active",
+    "description": "Pimentón dulce molido para chorizo",
+    "brand": "Ingredientes",
+    "categories": ["Materias Primas"],
+    "productType": "MP"
+  },
+  {
+    "name": "Etiqueta Chorizo de cerdo",
+    "slug": "etiqueta-chorizo-de-cerdo",
+    "cod": "EM001",
+    "originalPrice": 5,
+    "wholesalePrice": 4,
+    "retailPrice": 5,
+    "stock": 1000,
+    "minQuantity": 100,
+    "maxQuantity": 10000,
+    "thumbnail": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/etiqueta-chorizo.jpg",
+    "status": "active",
+    "description": "Etiqueta para envases de Chorizo de cerdo",
+    "brand": "Envases",
+    "categories": ["Embalajes"],
+    "productType": "EM"
+  },
+  {
+    "name": "Bolsa para empaque al vacío",
+    "slug": "bolsa-empaque-vacio",
+    "cod": "EM002",
+    "originalPrice": 10,
+    "wholesalePrice": 8,
+    "retailPrice": 10,
+    "stock": 2000,
+    "minQuantity": 200,
+    "maxQuantity": 5000,
+    "thumbnail": "https://res.cloudinary.com/dn7npxeof/image/upload/v1719626910/Henry/delicias-gales/products/bolsa-empaque-vacio.jpg",
+    "status": "active",
+    "description": "Bolsa de plástico para empaque al vacío",
+    "brand": "Envases",
+    "categories": ["Embalajes"],
+    "productType": "EM"
   }
 ]

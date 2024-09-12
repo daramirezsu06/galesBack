@@ -1,6 +1,7 @@
 export enum ProductType {
   MP = 'MP',
   EM = 'EM',
-  PF = 'PF',
+  PT = 'PT',
   CO = 'CO',
+  PI = 'PI',
 }
