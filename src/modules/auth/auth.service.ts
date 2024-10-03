@@ -7,6 +7,7 @@ import { NodemailerService } from '../nodemailer/nodemailer.service';
 import { CreateUserDto } from '../users/users.dto';
 import { LoginUserDto, LoginUserDtoGoogle, RecoveryPassDto } from './auth.dto';
 import { Role } from 'src/models/roles.enum';
+import { User } from 'src/entities/user.entity';
 @Injectable()
 export class AuthService {
   constructor(

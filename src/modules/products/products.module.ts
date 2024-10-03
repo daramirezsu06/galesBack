@@ -13,6 +13,7 @@ import { ProductAttribute } from 'src/entities/productAttributes.entity';
 import { ProductImagesController } from './controllers/productImages.controller';
 import { ProductImagesService } from './services/productImages.service';
 import { ProductImages } from 'src/entities/productImages';
+import { ProductInventories } from 'src/entities/productInventory';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { ProductImages } from 'src/entities/productImages';
       Attribute,
       ProductAttribute,
       ProductImages,
+      ProductInventories,
     ]),
   ],
   controllers: [

@@ -16,6 +16,7 @@ import { CreateProductDto, UpdateProductDto } from '../dtos/product.dto';
 import { UUID } from 'crypto';
 import { ApiQuery } from '@nestjs/swagger';
 import { ProductStatus } from 'src/models/productStatus.enum';
+import { AddInventory } from '../dtos/inventori.dto';
 
 @Controller('products')
 export class ProductsController {
@@ -25,15 +26,20 @@ export class ProductsController {
   create(@Body() createProductDto: CreateProductDto) {
     return this.productsService.create(createProductDto);
   }
-
+  @Post('addInventory')
+  addInventory(@Body() addInventory: AddInventory) {
+    return this.productsService.CreateInventoryTransaction(addInventory);
+  }
   @Get()
   @ApiQuery({ name: 'status', required: false })
   @SerializeOptions({ groups: ['findAll'] })
   findAll(
     @Query('status', new ParseEnumPipe(ProductStatus, { optional: true }))
     status?: ProductStatus,
+    @Query('types') types?: string,
   ) {
-    return this.productsService.findAll(status);
+    const typesToFilter = types ? types.split(',') : [];
+    return this.productsService.findAll(status, typesToFilter);
   }
 
   @Get('find-by-slug/:slug')

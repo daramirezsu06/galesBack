@@ -1,9 +1,8 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { Client } from 'pg';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  constructor(@Inject('PG') private clientPg: Client) {}
+  constructor() {}
   getHello(): string {
     return 'Hello World!';
   }

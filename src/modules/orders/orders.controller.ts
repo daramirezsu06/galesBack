@@ -8,16 +8,17 @@ import {
   ParseUUIDPipe,
   Post,
   Put,
+  Query,
   Req,
   UseGuards,
 } from '@nestjs/common';
 import { CreateOrderDto, UpdateOrderProductDto } from './order.dto';
-import { UUID } from 'crypto';
 import { Roles } from 'src/decorators/roles.decorator';
 import { RolesGuard } from 'src/guards/roles.guard';
 import { Role } from 'src/models/roles.enum';
 import { AuthGuard } from 'src/guards/auth.guard';
 import { PayDto } from './pay.dto';
+import { UUID } from 'crypto';
 
 @ApiTags('Orders')
 @Controller('orders')
@@ -28,9 +29,40 @@ export class OrdersController {
   @Get()
   @Roles(Role.ADMIN, Role.SELLER, Role.CUSTOMER)
   @UseGuards(AuthGuard, RolesGuard)
-  findAll(@Req() request) {
-    const userId = request.user.id;
-    return this.ordersService.findAll(userId);
+  findAll(
+    @Req() request,
+    @Query('dateInit') dateInit: string,
+    @Query('dateFinaly') dateFinaly: string,
+  ) {
+    const currentDate = new Date();
+    // Establecemos el primer día del mes actual
+    const firstDayOfMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      1,
+    );
+    const initialDate = dateInit ? new Date(dateInit) : firstDayOfMonth;
+    const finalDate = dateFinaly ? new Date(dateFinaly) : currentDate;
+    const userId: string = request.user.id;
+    return this.ordersService.findAll({ userId, initialDate, finalDate });
+  }
+
+  @Get('filtered')
+  gerOrderFiltered(
+    @Query('dateInit') dateInit?: string,
+    @Query('dateFinaly') dateFinaly?: string,
+    @Query('userId') userId?: string,
+  ) {
+    const currentDate = new Date();
+    // Establecemos el primer día del mes actual
+    const firstDayOfMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      1,
+    );
+    const initialDate = dateInit ? new Date(dateInit) : firstDayOfMonth;
+    const finalDate = dateFinaly ? new Date(dateFinaly) : currentDate;
+    return this.ordersService.findAll({ userId, initialDate, finalDate });
   }
 
   @ApiBearerAuth()

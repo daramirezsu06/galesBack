@@ -10,7 +10,12 @@ import { ProductInventories } from 'src/entities/productInventory';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Production, ProductionItem, Product, ProductInventories]),
+    TypeOrmModule.forFeature([
+      Production,
+      ProductionItem,
+      Product,
+      ProductInventories,
+    ]),
     ProductsModule,
   ],
   controllers: [ProductionController],

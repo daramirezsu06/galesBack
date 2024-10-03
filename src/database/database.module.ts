@@ -1,22 +1,7 @@
 import { Module, Global } from '@nestjs/common';
 import { ConfigType } from '@nestjs/config';
-import { Client } from 'pg';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
-import { User } from 'src/entities/user.entity';
 import config from '../config';
-import { Order } from 'src/entities/order.entity';
-import { Category } from 'src/entities/category.entity';
-import { Product } from 'src/entities/product.entity';
-import { ProductImages } from 'src/entities/productImages';
-import { ProductInventories } from 'src/entities/productInventory';
-import { ProductAttribute } from 'src/entities/productAttributes.entity';
-import { Attribute } from 'src/entities/attribute.entity';
-import { OrderDetail } from 'src/entities/orderDetail.entity';
-import { Settings } from 'src/entities/settings.entity';
-
-const API_KEY = '12345678';
-const API_KEY_PROD = 'PROD12345678';
 
 @Global()
 @Module({
@@ -35,51 +20,14 @@ const API_KEY_PROD = 'PROD12345678';
           database: dbName,
           // Migraciones -> pasamos synchronize a false, comentamos entities
           // y dropschema
-          entities: [
-            User,
-            Attribute,
-            Category,
-            Order,
-            Product,
-            OrderDetail,
-            ProductImages,
-            ProductInventories,
-            ProductAttribute,
-            Settings,
-          ],
           synchronize: true,
           autoLoadEntities: true,
-          logging: ['error'],
-          // logging: true,
-          // dropSchema: true,
+          // logging: ['error'],
+          logging: true,
+          dropSchema: true,
         };
       },
     }),
   ],
-  providers: [
-    {
-      provide: 'API_KEY',
-      useValue: process.env.NODE_ENV === 'prod' ? API_KEY_PROD : API_KEY,
-    },
-    {
-      provide: 'PG',
-      useFactory: (configService: ConfigType<typeof config>) => {
-        const { dbHost, dbPort, dbName, dbUser, dbPass } =
-          configService.postgres;
-        const client = new Client({
-          host: dbHost,
-          port: dbPort,
-          database: dbName,
-          user: dbUser,
-          password: dbPass,
-        });
-
-        client.connect();
-        return client;
-      },
-      inject: [config.KEY],
-    },
-  ],
-  exports: ['API_KEY', 'PG'],
 })
 export class DatabseModule {}

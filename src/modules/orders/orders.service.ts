@@ -1,6 +1,12 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { MoreThan, Repository } from 'typeorm';
+import {
+  Between,
+  LessThanOrEqual,
+  MoreThan,
+  MoreThanOrEqual,
+  Repository,
+} from 'typeorm';
 import { Order } from 'src/entities/order.entity';
 import { OrderDetail } from 'src/entities/orderDetail.entity';
 import { User } from 'src/entities/user.entity';
@@ -23,14 +29,25 @@ export class OrdersService {
     @InjectRepository(Product)
     private readonly productsRepository: Repository<Product>,
   ) {}
-  async findAll(userId: UUID) {
+  async findAll({
+    userId,
+    initialDate,
+    finalDate,
+  }: {
+    userId: string;
+    initialDate: Date;
+    finalDate: Date;
+  }) {
     const user = await this.usersRepository.findOneBy({ id: userId });
     console.log(user);
 
     if (user.role !== 'admin') {
       if (user.role === 'customer' || user.role === 'employee') {
         const orderUsers = await this.ordersRepository.find({
-          where: { user: { id: userId } },
+          where: {
+            user: { id: userId },
+            createdAt: Between(initialDate, finalDate),
+          },
         });
         return orderUsers;
       }
@@ -38,7 +55,8 @@ export class OrdersService {
         const orderSeller = await this.ordersRepository.find({
           where: [
             { user: { sellerId: userId } }, // Órdenes asociadas al vendedor
-            { user: { id: userId } }, // Órdenes creadas por el vendedor
+            { user: { id: userId } },
+            { createdAt: Between(initialDate, finalDate) }, // Órdenes creadas por el vendedor
           ],
           relations: ['user'], // Aseguramos que se unan las relaciones necesarias
         });

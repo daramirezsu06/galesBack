@@ -19,15 +19,15 @@ import { Roles } from 'src/decorators/roles.decorator';
 import { RolesGuard } from 'src/guards/roles.guard';
 import { UserAuthGuard } from 'src/guards/userAuth.guard';
 
-@ApiTags('Users')
-@ApiBearerAuth()
-@UseGuards(AuthGuard)
+// @ApiTags('Users')
+// @ApiBearerAuth()
+// @UseGuards(AuthGuard)
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Roles(Role.ADMIN)
-  @UseGuards(RolesGuard)
+  // @Roles(Role.ADMIN)
+  // @UseGuards(RolesGuard)
   @Get()
   findAll() {
     return this.usersService.findAll();
