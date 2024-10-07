@@ -22,7 +22,7 @@ export class FormulationsService {
 
   async findAll() {
     return await this.formulationRepo.find({
-      relations: ['formulationItems', 'formulationItems.product'],
+      relations: ['product', 'formulationItems', 'formulationItems.product'],
     });
   }
 

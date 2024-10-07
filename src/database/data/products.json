@@ -248,7 +248,8 @@
     "description": "Etiqueta para envases de Chorizo de cerdo",
     "brand": "Envases",
     "categories": ["Embalajes"],
-    "productType": "EM"
+    "productType": "EM",
+    "cost": 4
   },
   {
     "name": "Bolsa para empaque al vacío",

@@ -1,6 +1,7 @@
 import { Module, Global } from '@nestjs/common';
 import { ConfigType } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import config from '../config';
 
 @Global()
@@ -22,9 +23,9 @@ import config from '../config';
           // y dropschema
           synchronize: true,
           autoLoadEntities: true,
-          // logging: ['error'],
-          logging: true,
-          dropSchema: true,
+          logging: ['error'],
+          // logging: true,
+          // dropSchema: true,
         };
       },
     }),
