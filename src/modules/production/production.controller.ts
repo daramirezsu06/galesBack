@@ -8,6 +8,10 @@ import { ProductionService } from './production.service';
 @Controller('production')
 export class ProductionController {
   constructor(private productionServices: ProductionService) {}
+  @Get()
+  findAllProductions() {
+    return this.productionServices.findAll();
+  }
   @Post()
   crateProduction(@Body() productionData: CreateProductionDto) {
     return this.productionServices.create(productionData);

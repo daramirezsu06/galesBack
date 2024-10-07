@@ -23,9 +23,9 @@ import config from '../config';
           // y dropschema
           synchronize: true,
           autoLoadEntities: true,
-          logging: ['error'],
-          // logging: true,
-          // dropSchema: true,
+          // logging: ['error'],
+          logging: true,
+          dropSchema: true,
         };
       },
     }),

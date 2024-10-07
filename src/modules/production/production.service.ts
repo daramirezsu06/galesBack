@@ -36,7 +36,9 @@ export class ProductionService {
   ) {}
 
   async findAll() {
-    return await this.productionRepo.find();
+    return await this.productionRepo.find({
+      relations: ['productionItems', 'productionItems.product'],
+    });
   }
 
   async findOne(id: UUID) {
@@ -53,7 +55,7 @@ export class ProductionService {
   }
   async findAllOrders() {
     return await this.productionOrderRepo.find({
-      relations: ['productionOrderItems'],
+      relations: ['productionOrderItems', 'product'],
     });
   }
 
