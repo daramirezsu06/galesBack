@@ -21,11 +21,11 @@ import config from '../config';
           database: dbName,
           // Migraciones -> pasamos synchronize a false, comentamos entities
           // y dropschema
-          synchronize: true,
-          autoLoadEntities: true,
+          synchronize: false,
+          autoLoadEntities: false,
           // logging: ['error'],
-          logging: true,
-          dropSchema: true,
+          // logging: true,
+          // dropSchema: true,
         };
       },
     }),

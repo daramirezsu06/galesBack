@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 import { Product } from './product.entity';
 import { ProductionItem } from './productionItem.entity';
-import { ProductionStatus } from 'src/models/productionEstatus.enum';
+import { ProductionStatus } from '../models/productionEstatus.enum';
 
 @Entity('productions')
 export class Production {

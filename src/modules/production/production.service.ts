@@ -14,7 +14,7 @@ import {
   CreateProductionOrderDto,
 } from './production.dto';
 import { Product } from 'src/entities/product.entity';
-import { ProductInventories } from 'src/entities/productInventory';
+import { ProductInventories } from 'src/entities/productInventory.entity';
 import { ProductionOrder } from 'src/entities/productionOrder.entity';
 import { ProductionOrderItem } from 'src/entities/productionOrderItem.entity';
 import { ProductionOrderStatus } from 'src/models/productionEstatus.enum';

@@ -12,14 +12,14 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Category } from './category.entity';
-import { ProductImages } from './productImages';
-import { ProductInventories } from './productInventory';
+import { ProductImages } from './productImages.entity';
+import { ProductInventories } from './productInventory.entity';
 import { Brand } from './brand.entity';
-import { ProductStatus } from 'src/models/productStatus.enum';
+import { ProductStatus } from '../models/productStatus.enum';
 import { ProductAttribute } from './productAttributes.entity';
 import { OrderDetail } from './orderDetail.entity';
-import { ProductType } from 'src/models/productType.enum';
-import { FormulationItem } from './formulationItems';
+import { ProductType } from '../models/productType.enum';
+import { FormulationItem } from './formulationItems.entity';
 import { Production } from './production.entity';
 import { Formulation } from './formulations.entity';
 

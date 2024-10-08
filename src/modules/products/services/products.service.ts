@@ -11,7 +11,7 @@ import {
 } from 'typeorm';
 import { Category } from 'src/entities/category.entity';
 import { Brand } from 'src/entities/brand.entity';
-import { ProductInventories } from 'src/entities/productInventory';
+import { ProductInventories } from 'src/entities/productInventory.entity';
 import { AddInventory } from '../dtos/inventori.dto';
 
 @Injectable()

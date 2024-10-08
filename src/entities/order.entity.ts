@@ -1,5 +1,5 @@
-import { OrderStatus } from 'src/models/orderStatus.enum';
-import { PaymentMethod } from 'src/models/paymentMethods.enum';
+import { OrderStatus } from '../models/orderStatus.enum';
+import { PaymentMethod } from '../models/paymentMethods.enum';
 import {
   Column,
   CreateDateColumn,
