@@ -43,6 +43,7 @@ lerna-debug.log*
 .env.test.local
 .env.production.local
 .env.local
+.prod.env
 
 # temp directory
 .temp
@@ -53,7 +54,8 @@ pids
 *.pid
 *.seed
 *.pid.lock
-
+docker*
+Docker*
 
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
