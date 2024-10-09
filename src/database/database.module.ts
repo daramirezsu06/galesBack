@@ -23,9 +23,12 @@ import config from '../config';
           // y dropschema
           synchronize: true,
           autoLoadEntities: true,
-          // logging: ['error'],
-          logging: true,
-          dropSchema: true,
+          // ssl: {
+          //   rejectUnauthorized: false, // Esto es importante si no estás usando un certificado verificado
+          // },
+          logging: ['error'],
+          // logging: true,
+          // dropSchema: true,
         };
       },
     }),

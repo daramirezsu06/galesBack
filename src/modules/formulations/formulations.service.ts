@@ -4,7 +4,7 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FormulationItem } from 'src/entities/formulationItems';
+import { FormulationItem } from 'src/entities/formulationItems.entity';
 import { Formulation } from 'src/entities/formulations.entity';
 import { Repository } from 'typeorm';
 import { CreateFormulationDto, UpdateFormulationDto } from './formulation.dto';

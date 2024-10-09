@@ -1,8 +1,7 @@
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
-import { CustomerType } from 'src/models/customerType.enum';
-import { Role } from 'src/models/roles.enum';
-import { UserStatus } from 'src/models/userStatus.enum';
+import { Role } from '../models/roles.enum';
+import { UserStatus } from '../models/userStatus.enum';
 import { v4 as uuid } from 'uuid';
 import {
   Column,
@@ -13,6 +12,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Order } from './order.entity';
+import { CustomerType } from '../models/customerType.enum';
 
 @Entity('users')
 export class User {

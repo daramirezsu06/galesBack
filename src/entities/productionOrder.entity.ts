@@ -11,7 +11,7 @@ import { Product } from './product.entity';
 import {
   ProductionOrderStatus,
   ProductionStatus,
-} from 'src/models/productionEstatus.enum';
+} from '../models/productionEstatus.enum';
 import { ProductionOrderItem } from './productionOrderItem.entity';
 
 @Entity('production_orders')

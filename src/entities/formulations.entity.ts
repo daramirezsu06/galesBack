@@ -10,7 +10,7 @@ import {
 import { Product } from './product.entity';
 import { Exclude } from 'class-transformer';
 import { ApiHideProperty } from '@nestjs/swagger';
-import { FormulationItem } from './formulationItems';
+import { FormulationItem } from './formulationItems.entity';
 
 @Entity({ name: 'formulations' })
 export class Formulation {

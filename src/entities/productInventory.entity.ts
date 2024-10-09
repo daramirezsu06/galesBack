@@ -10,7 +10,7 @@ import { Exclude } from 'class-transformer';
 
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Product } from './product.entity';
-import { REASON } from 'src/models/reason.enum';
+import { REASON } from '../models/reason.enum';
 
 @Entity('product_inventories')
 export class ProductInventories {
