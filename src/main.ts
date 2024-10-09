@@ -7,6 +7,8 @@ import * as session from 'express-session';
 import * as passport from 'passport';
 
 async function bootstrap() {
+  console.log('NODE_ENV:', process.env.NODE_ENV);
+
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   app.use(loggerGlobal);

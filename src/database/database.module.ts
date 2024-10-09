@@ -21,9 +21,12 @@ import config from '../config';
           database: dbName,
           // Migraciones -> pasamos synchronize a false, comentamos entities
           // y dropschema
-          synchronize: false,
-          autoLoadEntities: false,
-          // logging: ['error'],
+          synchronize: true,
+          autoLoadEntities: true,
+          // ssl: {
+          //   rejectUnauthorized: false, // Esto es importante si no estás usando un certificado verificado
+          // },
+          logging: ['error'],
           // logging: true,
           // dropSchema: true,
         };
