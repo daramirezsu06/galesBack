@@ -12,7 +12,7 @@ export const AppDataSource = new DataSource({
   migrations: [join(__dirname, '../database/migrations/*.ts')],
   migrationsTableName: process.env.TYPEORM_MIGRATIONS_TABLE_NAME,
   entities: [join(__dirname, '../entities/*.entity.ts')],
-  // ssl: {
-  //   rejectUnauthorized: false, // Esto le dice al cliente que ignore los certificados no verificados (útil en ambientes de desarrollo)
-  // },
+  ssl: {
+    rejectUnauthorized: false, // Esto le dice al cliente que ignore los certificados no verificados (útil en ambientes de desarrollo)
+  },
 });
