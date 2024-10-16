@@ -1,4 +1,8 @@
-import { OrderStatus } from '../models/orderStatus.enum';
+import {
+  OrderStatus,
+  PaymentStatus,
+  PaymentTerms,
+} from '../models/orderStatus.enum';
 import { PaymentMethod } from '../models/paymentMethods.enum';
 import {
   Column,
@@ -23,6 +27,20 @@ export class Order {
 
   @Column({ type: 'enum', enum: OrderStatus, default: OrderStatus.ACTIVE })
   status: OrderStatus;
+
+  @Column({
+    type: 'enum',
+    enum: PaymentStatus,
+    name: 'Payment_status',
+    default: PaymentStatus.PENDING,
+  })
+  PaymentStatus: PaymentStatus;
+  @Column({
+    type: 'enum',
+    enum: PaymentTerms,
+    name: 'Payment_terms',
+  })
+  paymentTerms: PaymentTerms;
 
   @Column({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
   date: Date;
