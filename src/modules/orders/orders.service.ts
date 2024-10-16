@@ -16,6 +16,8 @@ import { UUID } from 'crypto';
 import { Preference } from 'mercadopago';
 import { mercadopagoConfig } from 'src/config/mercadoPago';
 import { PayDto } from './pay.dto';
+import { PaymentStatus, PaymentTerms } from 'src/models/orderStatus.enum';
+import { date } from 'joi';
 
 @Injectable()
 export class OrdersService {
@@ -70,6 +72,7 @@ export class OrdersService {
   async createOrder(
     userId: string,
     products: { id: string; quantity: number }[],
+    paymentTerms: PaymentTerms,
   ) {
     let total = 0;
     const user = await this.usersRepository.findOneBy({ id: userId });
@@ -79,6 +82,11 @@ export class OrdersService {
     order.user = user;
     order.date = new Date();
     order.total = 0; // Inicializa el total como 0
+    order.paymentTerms = paymentTerms;
+    if (paymentTerms == PaymentTerms.CASH) {
+      order.PaymentStatus = PaymentStatus.PAID;
+      order.paymentDate = new Date();
+    }
 
     const newOrder = await this.ordersRepository.save(order);
 

@@ -10,7 +10,7 @@ import {
   IsEnum,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { OrderStatus } from 'src/models/orderStatus.enum';
+import { OrderStatus, PaymentTerms } from 'src/models/orderStatus.enum';
 import { PaymentMethod } from 'src/models/paymentMethods.enum';
 
 class CreateOrderProductDto {
@@ -32,6 +32,10 @@ export class CreateOrderDto {
   @ValidateNested({ each: true })
   @Type(() => CreateOrderProductDto)
   products: CreateOrderProductDto[];
+
+  @IsOptional()
+  @IsEnum(PaymentTerms)
+  paymentTerms: PaymentTerms;
 }
 
 export class UpdateOrderProductDto {
