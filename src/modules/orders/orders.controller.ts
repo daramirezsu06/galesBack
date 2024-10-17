@@ -62,6 +62,8 @@ export class OrdersController {
     );
     const initialDate = dateInit ? new Date(dateInit) : firstDayOfMonth;
     const finalDate = dateFinaly ? new Date(dateFinaly) : currentDate;
+    console.log('usuario id', userId);
+
     return this.ordersService.findAll({ userId, initialDate, finalDate });
   }
 
@@ -107,5 +109,13 @@ export class OrdersController {
   ) {
     const userId = request.user.id;
     return this.ordersService.updateOrder(userId, orderId, changes);
+  }
+
+  @ApiBearerAuth()
+  @Roles(Role.ADMIN, Role.SELLER)
+  @UseGuards(AuthGuard, RolesGuard)
+  @Put('updatePayment/:id')
+  updatePayment(@Param('id') orderId: string) {
+    return this.ordersService.updatePayment(orderId);
   }
 }

@@ -60,6 +60,11 @@ export class CreateProductionDto {
   @Min(1)
   @IsOptional()
   quantityProduced: number;
+
+  @ApiProperty()
+  @IsUUID()
+  @IsNotEmpty()
+  productionOrdertId: string;
 }
 
 export class CreateProductionOrderDto {
