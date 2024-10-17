@@ -147,7 +147,12 @@ export class ProductionService {
     await queryRunner.startTransaction();
 
     try {
-      const { productId, productionItems = [], quantityProduced } = data;
+      const {
+        productId,
+        productionItems = [],
+        quantityProduced,
+        productionOrdertId,
+      } = data;
 
       // Validación del producto principal
       const product = await this.productRepo.findOne({
@@ -247,8 +252,14 @@ export class ProductionService {
       // Actualizar el stock del producto principal
       product.stock = newStock;
 
+      const productionOrder = await this.productionOrderRepo.findOne({
+        where: { id: productionOrdertId },
+      });
+      productionOrder.status = ProductionOrderStatus.COMPLETED;
+
       await queryRunner.manager.save(newProductInventory);
       await queryRunner.manager.save(product);
+      await queryRunner.manager.save(productionOrder);
 
       // Confirmar la transacción si todo salió bien
       await queryRunner.commitTransaction();

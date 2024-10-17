@@ -17,7 +17,6 @@ import { Preference } from 'mercadopago';
 import { mercadopagoConfig } from 'src/config/mercadoPago';
 import { PayDto } from './pay.dto';
 import { PaymentStatus, PaymentTerms } from 'src/models/orderStatus.enum';
-import { date } from 'joi';
 
 @Injectable()
 export class OrdersService {
@@ -179,6 +178,15 @@ export class OrdersService {
     await this.ordersRepository.update({ id: orderId }, order);
 
     return { message: 'Order updated successfully', ...order };
+  }
+  async updatePayment(orderId) {
+    const order = await this.ordersRepository.findOneBy({ id: orderId });
+    if (order && order.PaymentStatus == PaymentStatus.PENDING) {
+      order.PaymentStatus = PaymentStatus.PAID;
+      order.paymentDate = new Date();
+    }
+
+    return this.ordersRepository.save(order);
   }
 
   async createOrderSeller(

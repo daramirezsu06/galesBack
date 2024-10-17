@@ -46,6 +46,7 @@ lerna-debug.log*
 .prod.env
 render.env
 .stop.env
+preprod.env
 
 # temp directory
 .temp
