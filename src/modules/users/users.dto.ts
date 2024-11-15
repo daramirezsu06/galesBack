@@ -136,6 +136,12 @@ export class CreateUserDto {
 
   @IsEmpty()
   sellerId?: string;
+
+  @IsOptional()
+  lat?: string;
+
+  @IsOptional()
+  lng?: string;
 }
 export class CreateUserwhitGoogleDto extends OmitType(CreateUserDto, [
   'confPassword',
@@ -162,12 +168,4 @@ export class UpdateUserDto extends OmitType(PartialType(CreateUserDto), [
   @IsString()
   @IsOptional()
   ruta?: string;
-
-  @IsString()
-  @IsOptional()
-  lat?: string;
-
-  @IsString()
-  @IsOptional()
-  lng?: string;
 }

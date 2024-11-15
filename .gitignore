@@ -59,7 +59,7 @@ pids
 *.pid.lock
 docker*
 Docker*
-
+pgdata
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
