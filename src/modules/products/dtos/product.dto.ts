@@ -148,6 +148,8 @@ export class CreateProductDto {
   @IsUUID()
   readonly brandId: string;
 
+  
+
   // /**
   //  * Imágenes del producto
   //  * @example [{secure_url: 'https://res.cloudinary.com/dn7npxeof/image/upload/v1712238917/Henry/PM4-ecommerce/Sin_imagen_disponible_zxruow.webp'}]
